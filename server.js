@@ -15,6 +15,7 @@ app.use(morgan("dev"))
 
 const PORT = process.env.PORT || 5000;
 
+//Render database internal connection
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
     ssl: {

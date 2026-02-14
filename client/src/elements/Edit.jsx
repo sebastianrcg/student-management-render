@@ -11,6 +11,8 @@ const Edit = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
+
+        document.title = "Edit";
         axios.get(`/get_student/${id}`)
             .then((res) => {
                 setData(res.data);
