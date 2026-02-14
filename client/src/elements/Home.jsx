@@ -8,6 +8,8 @@ const Home = () => {
     const [deleted, setDeleted] = useState(true);
 
     useEffect(() => {
+
+        document.title = "Student Management";
         if (deleted) {
             setDeleted(false)
 
