@@ -13,15 +13,23 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"))
 
-const port = 5000;
+const PORT = process.env.PORT || 5000;
 
 const pool = new Pool({
-    host: "localhost",
-    user: "postgres",
-    password: "postgres",
-    database: "students",
-    port: 5432
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false //don't check for ssl cert
+    }
 });
+
+//Previous local connection
+// const pool = new Pool({
+//     host: "localhost",
+//     user: "postgres",
+//     password: "postgres",
+//     database: "students",
+//     port: 5432
+// });
 
 app.post('/add_user', (req, res)=>{
     const sql = "INSERT INTO student_details (name, email, age, gender) VALUES ($1,$2,$3,$4) returning *";
@@ -80,6 +88,6 @@ app.delete('/delete_user/:id', (req, res)=>{
     })
 })
 
-app.listen(port, ()=> {
-    console.log(`Server listening on Port: ${port}`);
+app.listen(PORT, ()=> {
+    console.log(`Server listening on Port: ${PORT}`);
 });
