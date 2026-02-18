@@ -70,10 +70,11 @@ app.put('/update_user/:id', (req, res)=>{
         req.body.name,
         req.body.email,
         req.body.age,
-        req.body.gender
+        req.body.gender,
+        req.body.status
 
     ]
-    const sql = `UPDATE student_details set name=$1, email=$2, age=$3, gender=$4 where id=${id}`;
+    const sql = `UPDATE student_details set name=$1, email=$2, age=$3, gender=$4, status=$5 where id=${id}`;
     pool.query(sql, values, (error, results)=>{
         if (error) res.json({message: "Something went wrong"});
         return res.json({success: "Student Updated"});

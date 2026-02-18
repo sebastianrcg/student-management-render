@@ -1,0 +1,20 @@
+.content {
+    width: 100%;
+}
+
+.student-title {
+    padding-top: 20px;
+    margin-left: 20px;
+    font-size: 40px;
+}
+
+.back-btn {
+    margin-left: 20px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.student-card {
+    width: 60%;
+    margin-left: 20px;
+}

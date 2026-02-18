@@ -1,0 +1,28 @@
+.student-id {
+    padding-top: 20px;
+    margin-left: 20px;
+    font-size: 40px;
+}
+
+.back-btn {
+    margin-left: 20px;
+}
+
+.content{
+    width: 100%;
+}
+
+.edit-form {
+    margin-left: 20px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    width: 50%;
+    border-radius: 20px;
+    border: 2px solid #6c757d;   
+    border-collapse:inherit ;
+    
+}
+
+.edit-form input,select {
+    margin-left: 10px;
+}
