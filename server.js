@@ -32,7 +32,7 @@ const pool = new Pool({
 //     port: 5432
 // });
 
-app.post('/add_user', (req, res)=>{
+app.post('/add_student', (req, res)=>{
     const sql = "INSERT INTO student_details (name, email, age, gender) VALUES ($1,$2,$3,$4) returning *";
     const values = [
         req.body.name,
@@ -64,7 +64,7 @@ app.get('/get_student/:id', (req, res)=>{
     })
 })
 
-app.put('/update_user/:id', (req, res)=>{
+app.put('/update_student/:id', (req, res)=>{
     const id = parseInt(req.params.id);
     const values = [
         req.body.name,
@@ -81,7 +81,7 @@ app.put('/update_user/:id', (req, res)=>{
     })
 });
 
-app.delete('/delete_user/:id', (req, res)=>{
+app.delete('/delete_student/:id', (req, res)=>{
     const id = req.params.id;
     const sql = `DELETE from student_details where id=${id}`;
     pool.query(sql, (error, results)=>{

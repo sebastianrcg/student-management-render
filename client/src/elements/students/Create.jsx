@@ -26,7 +26,7 @@ function Create() {
     function handleSubmit(event){
         event.preventDefault();
 
-        axios.post('/add_user', values).then((res)=> {
+        axios.post('/add_student', values).then((res)=> {
             
             navigate('/');
             console.log(res);
